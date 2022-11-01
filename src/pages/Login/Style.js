@@ -4,7 +4,7 @@ export const Container = styled.div`
   ${props => props.theme.variables.flex("column", "center", "center")}
   width: 400px;
   margin: 0 auto;
-  padding: 60px 0 160px 0;
+  padding: 100px 0 160px 0;
 `;
 
 export const KreamTitle = styled.p`

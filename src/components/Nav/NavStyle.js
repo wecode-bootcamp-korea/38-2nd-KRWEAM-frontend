@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { Link } from "react-router-dom";
 
 export const NavContainer = styled.div`
-  z-index: 999;
+  z-index: 997;
   position: fixed;
   background-color: white;
   width: 100%;

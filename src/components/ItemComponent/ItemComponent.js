@@ -39,7 +39,7 @@ export default function ItemComponent({ productInfo, location, onClick }) {
           <S.BuyNow>즉시 구매가</S.BuyNow>
         </S.ProductInfo>
       </S.ItemWrapper>
-      {location.includes("product") ? (
+      {location.pathname.includes("product") ? (
         <S.InterestFigure>
           {LikedStatus ? (
             <BsFillBookmarkFill className="bookmark" />

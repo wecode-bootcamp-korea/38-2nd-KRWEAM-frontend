@@ -8,7 +8,7 @@ const KaKaoLogin = () => {
   const navigate = useNavigate();
 
   const getKakaoToken = () => {
-    fetch(`${api.login}/users/auth/kakao/callback?code=${code}`, {
+    fetch(`${api.base}/users/auth/kakao/callback?code=${code}`, {
       method: "GET",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
     })
