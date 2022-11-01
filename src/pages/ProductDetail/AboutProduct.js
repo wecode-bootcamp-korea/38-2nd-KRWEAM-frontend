@@ -206,7 +206,7 @@ const AboutProduct = props => {
               ) : (
                 <BsFillBookmarkFill className="bookmarkIcon" />
               )}
-              numInterestedItems
+              {bookmarkNum.totalWished > 0 ? bookmarkNum.totalWished : 0}
             </S.ProductInterestedItems>
             <ProductBtn
               num="2"

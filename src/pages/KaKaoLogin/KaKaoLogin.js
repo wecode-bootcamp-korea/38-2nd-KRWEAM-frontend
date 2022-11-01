@@ -17,6 +17,7 @@ const KaKaoLogin = () => {
         if (data.accessToken) {
           localStorage.setItem("token", data.accessToken);
           navigate("/");
+          alert("성공적으로 로그인되었습니다.");
         } else {
           alert("로그인 정보를 다시 확인하세요");
           navigate("/login");

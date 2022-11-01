@@ -5,6 +5,7 @@ const BASE_URL = "http://3.36.127.132:3000";
 
 export const api = {
   base: `${BASE_URL}`,
+  search: `${BASE_URL}/search`,
   wish: `${BASE_URL}/wish`,
   products: `${BASE_URL}/products`,
   dealhistories: `${BASE_URL}/dealhistories`,

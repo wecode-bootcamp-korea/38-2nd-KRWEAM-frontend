@@ -92,6 +92,7 @@ export const WishItemDeleteBtn = styled.span`
 `;
 
 export const StyledLink = styled(Link)`
+  ${({ theme }) => theme.variables.flex("", "center", "center")}
   color: #222;
   text-decoration: none;
 `;

@@ -28,7 +28,7 @@ const ModifyProfile = ({ setIsClickedModify }) => {
 
   const SubmitModifyInfo = () => {
     if (emailRegex.test(userInfo.email)) {
-      fetch(`${api.login}/users/info`, {
+      fetch(`${api.base}/users/info`, {
         method: "PATCH",
         headers: {
           "content-type": "application/json",

@@ -29,7 +29,7 @@ const DealSteps = ({ location, productId }) => {
   const dealStepsComps = {
     0: <SizeSelect />,
     1: <Bid />,
-    2: <Payment />,
+    2: <Payment productId={productId} />,
   };
 
   useEffect(() => {

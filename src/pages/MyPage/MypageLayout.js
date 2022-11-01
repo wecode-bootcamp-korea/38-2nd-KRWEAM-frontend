@@ -15,6 +15,13 @@ const MyPageLayout = () => {
   return (
     <S.MyPageContainer>
       <MyPageAside />
+      {/* {params.log === "main" ? (
+        <MyPageMain />
+      ) : params.log === "wish" ? (
+        <MyPageWish />
+      ) : (
+        <MyPageList />
+      )} */}
       {routingObj[params.log] || <MyPageList />}
     </S.MyPageContainer>
   );

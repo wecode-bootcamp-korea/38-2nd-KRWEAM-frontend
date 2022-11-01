@@ -23,7 +23,6 @@ const WishItem = ({ wishItem, onRemove }) => {
         Authorization: localStorage.getItem("token"),
       },
     }).then(res => {
-      console.log(res);
       alert(STATUS[res.status]);
     });
   };

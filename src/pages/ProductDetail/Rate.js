@@ -26,7 +26,6 @@ const Rate = () => {
     return { x: item.date, y: item.price };
   });
   const reReRateData = [{ id: "ja", data }];
-  console.log(rateData);
 
   return (
     <>

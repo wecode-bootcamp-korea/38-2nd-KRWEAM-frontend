@@ -16,21 +16,23 @@ export default function ItemComponent({ productInfo, location, onClick }) {
     totalWished,
   } = productInfo;
 
+  const moveToDetail = () => {
+    navigate(`/detail/${id}`);
+    window.location.reload();
+  };
+
   return (
     <S.ItemContainer>
       <S.ItemWrapper>
         <S.ItemImageWrapper>
-          <S.ProductImage
-            src={productImage}
-            onClick={() => navigate(`/detail/${id}`)}
-          />
+          <S.ProductImage src={productImage} onClick={moveToDetail} />
         </S.ItemImageWrapper>
         <S.ProductInfo>
           <S.Brand>{brand}</S.Brand>
-          <S.ProductEngName onClick={() => navigate(`/detail/${id}`)}>
+          <S.ProductEngName onClick={moveToDetail}>
             {productEngName}
           </S.ProductEngName>
-          <S.ProductKrName onClick={() => navigate(`/detail/${id}`)}>
+          <S.ProductKrName onClick={moveToDetail}>
             {productKrName}
           </S.ProductKrName>
           <S.BuyPrice>

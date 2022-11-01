@@ -4,9 +4,9 @@ import DealSteps from "../components/DealSteps";
 
 const Buy = () => {
   const location = useLocation();
-  const { productId } = useParams();
+  const { id } = useParams();
 
-  return <DealSteps location={location} productId={productId} />;
+  return <DealSteps location={location} productId={id} />;
 };
 
 export default Buy;

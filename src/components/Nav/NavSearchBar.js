@@ -18,7 +18,7 @@ const NavSearchBar = props => {
     setModalOpen(false);
   };
   useEffect(() => {
-    fetch(`http://10.58.52.189:3000/search?keyword=${searchingValue}`, {
+    fetch(`${api.search}?keyword=${searchingValue}`, {
       method: "GET",
       headers: { "content-type": "application/json" },
     })

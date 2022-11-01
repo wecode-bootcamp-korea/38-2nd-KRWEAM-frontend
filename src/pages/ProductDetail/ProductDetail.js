@@ -42,10 +42,22 @@ const ProductDetail = () => {
         </S.TitleConatiner>
         {brandInfo.length > 0 ? (
           <S.ImagesContainer>
-            <ItemComponent productInfo={brandInfo[0]} location={location} />
-            <ItemComponent productInfo={brandInfo[1]} location={location} />
-            <ItemComponent productInfo={brandInfo[2]} location={location} />
-            <ItemComponent productInfo={brandInfo[3]} location={location} />
+            <ItemComponent
+              productInfo={brandInfo[0]}
+              location={location.pathname}
+            />
+            <ItemComponent
+              productInfo={brandInfo[1]}
+              location={location.pathname}
+            />
+            <ItemComponent
+              productInfo={brandInfo[2]}
+              location={location.pathname}
+            />
+            <ItemComponent
+              productInfo={brandInfo[3]}
+              location={location.pathname}
+            />
           </S.ImagesContainer>
         ) : null}
       </S.AnotherProducts>

@@ -35,7 +35,7 @@ const MyPageMain = () => {
     })
       .then(res => res.json())
       .then(data => setWishItem(data.message));
-    fetch(`${api.search}/users/info`, {
+    fetch(`${api.base}/users/info`, {
       method: "GET",
       headers: {
         "content-type": "application/json",
