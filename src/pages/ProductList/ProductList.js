@@ -1,7 +1,12 @@
 import React from "react";
+import ItemComponent from "../../components/ItemComponent/ItemComponent";
 
 const ProductList = () => {
-  return <h1>리스트페이지입니다.</h1>;
+  return (
+    <h1>
+      <ItemComponent />
+    </h1>
+  );
 };
 
 export default ProductList;
