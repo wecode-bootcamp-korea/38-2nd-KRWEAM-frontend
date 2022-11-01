@@ -1,7 +1,15 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import MainLayout from "./MainLayout";
 
 const Main = () => {
-  return <h1>메인페이지입니다.</h1>;
+  const [justDropItem, setJustDropItem] = useState([]);
+  useEffect(() => {
+    fetch("/data/mainmock.json")
+      .then(res => res.json())
+      .then(data => setJustDropItem(data));
+  }, []);
+
+  return <MainLayout justDropItem={justDropItem} />;
 };
 
 export default Main;
