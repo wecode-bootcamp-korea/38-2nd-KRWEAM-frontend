@@ -1,8 +1,15 @@
 import React from "react";
 import S from "./Style";
+import { APIKEY, REDIRECT_URI } from "../../config";
 import { ImBubble } from "react-icons/im";
 
 const LoginLayout = () => {
+  const KAKAO_AUTH_URL = `https://kauth.kakao.com/oauth/authorize?client_id=${APIKEY}&redirect_uri=${REDIRECT_URI}&response_type=code`;
+
+  const login = () => {
+    window.location.href = KAKAO_AUTH_URL;
+  };
+
   return (
     <S.Container>
       <S.KreamTitle>KRWEAM</S.KreamTitle>
@@ -26,7 +33,7 @@ const LoginLayout = () => {
         <S.SignUpBtnLi>비밀번호 찾기</S.SignUpBtnLi>
       </S.SignUpBtnContainer>
       <S.LoginBtnContainer>
-        <S.SocialLoginBtn>
+        <S.SocialLoginBtn onClick={login}>
           <S.IconContainer>
             <ImBubble />
           </S.IconContainer>
