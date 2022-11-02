@@ -7,7 +7,7 @@ const BASE_URL_CW = "http://10.58.52.94:3000";
 export const api = {
   wish: `${BASE_URL_CW}/wish`,
   products: `${BASE_URL_CW}/products`,
-  dealhistories: `${BASE_URL_CW}/dealhistory`,
-  deal: `${BASE_URL_CW}/deal`,
-  detail: `${BASE_URL_CW}/detail`,
+  dealhistories: `${BASE_URL_TS}/dealhistories`,
+  deal: `${BASE_URL_TS}/deal`,
+  detail: `${BASE_URL_TS}/detail`,
 };

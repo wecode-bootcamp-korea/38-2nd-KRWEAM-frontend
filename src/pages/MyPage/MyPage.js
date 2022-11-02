@@ -1,7 +1,8 @@
 import React from "react";
+import MyPageLayout from "./MypageLayout";
 
 const MyPage = () => {
-  return <h1>마이페이지입니다.</h1>;
+  return <MyPageLayout />;
 };
 
 export default MyPage;
