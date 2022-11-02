@@ -11,6 +11,7 @@ import Sell from "./pages/BuySell/Sell/Sell";
 import StylePage from "./pages/StylePage/StylePage";
 import Main from "./pages/Main/Main";
 import MyPage from "./pages/MyPage/MyPage";
+import KaKaoLogin from "./pages/KaKaoLogin/KaKaoLogin";
 
 const Router = () => {
   return (
@@ -26,6 +27,7 @@ const Router = () => {
         <Route path="/sell" element={<Sell />} />
         <Route path="/style" element={<StylePage />} />
         <Route path="/mypage" element={<MyPage />} />
+        <Route path="/oauth/kakao/callback" element={<KaKaoLogin />} />
       </Routes>
       <Footer />
     </BrowserRouter>
