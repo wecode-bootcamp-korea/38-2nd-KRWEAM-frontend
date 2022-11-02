@@ -1,7 +1,12 @@
 import React from "react";
+import { useLocation, useParams } from "react-router-dom";
+import DealSteps from "../components/DealSteps";
 
 const Sell = () => {
-  return <h1>아이템 판매.</h1>;
+  const location = useLocation();
+  const { productId } = useParams();
+
+  return <DealSteps location={location} productId={productId} />;
 };
 
 export default Sell;

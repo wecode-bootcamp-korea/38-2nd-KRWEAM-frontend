@@ -23,10 +23,10 @@ const Router = () => {
         <Route path="/detail" element={<ProductDetail />} />
         <Route path="/signup" element={<SignUp />} />
         <Route path="/login" element={<Login />} />
-        <Route path="/buy" element={<Buy />} />
-        <Route path="/sell" element={<Sell />} />
+        <Route path="/buy/:id" element={<Buy />} />
+        <Route path="/sell/:id" element={<Sell />} />
         <Route path="/style" element={<StylePage />} />
-        <Route path="/mypage/:log" element={<MyPage />} />
+        <Route path="/mypage/main" element={<MyPage />} />
         <Route path="/oauth/kakao/callback" element={<KaKaoLogin />} />
       </Routes>
       <Footer />
