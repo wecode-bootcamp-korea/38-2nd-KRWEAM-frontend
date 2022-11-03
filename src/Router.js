@@ -26,7 +26,7 @@ const Router = () => {
         <Route path="/buy" element={<Buy />} />
         <Route path="/sell" element={<Sell />} />
         <Route path="/style" element={<StylePage />} />
-        <Route path="/mypage" element={<MyPage />} />
+        <Route path="/mypage/:log" element={<MyPage />} />
         <Route path="/oauth/kakao/callback" element={<KaKaoLogin />} />
       </Routes>
       <Footer />
