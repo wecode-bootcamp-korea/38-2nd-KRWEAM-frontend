@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 export const FooterAll = styled.div`
   padding: 50px 40px;
+  margin-top: 30px;
   background-color: white;
   border-top: 1px solid #ebebeb;
 `;
@@ -20,7 +21,7 @@ export const FooterServiceTextStrong = styled.div`
 `;
 export const FooterText = styled.li`
   margin-top: 16px;
-  font-weight: lighter;
+  color: ${({ theme }) => theme.style.warmGrey_3};
   font-size: 14px;
 `;
 export const FooterServicebtn = styled.button`
@@ -28,8 +29,9 @@ export const FooterServicebtn = styled.button`
   height: 34px;
   margin-top: 10px;
   color: #fafafa;
-  background-color: ${({ theme }) => theme.style.textColor};
+  background-color: black;
   font-size: 12px;
+  border: none;
 `;
 export const FooterTermContainer = styled.div`
   ${({ theme }) => theme.variables.flex(null, "space-between", null)}
@@ -55,6 +57,7 @@ export const FooterBusiness = styled.div`
   width: 651px;
   line-height: 20px;
   font-size: 13px;
+  color: ${({ theme }) => theme.style.warmGrey_3};
 `;
 export const FooterNotice = styled.div`
   display: flex;
@@ -63,6 +66,7 @@ export const FooterNotice = styled.div`
 export const FooterNoticeText = styled.div`
   width: 620px;
   font-size: 12px;
+  color: ${({ theme }) => theme.style.warmGrey_3};
 `;
 export const FooterCopy = styled.div`
   margin-left: auto;

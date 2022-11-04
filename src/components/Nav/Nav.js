@@ -1,30 +1,68 @@
-import React from "react";
+import React, { useState } from "react";
 import * as S from "./NavStyle";
 import { BsSearch } from "react-icons/bs";
+import { useNavigate } from "react-router-dom";
+import NavSearchBar from "./NavSearchBar";
+import { BsXLg } from "react-icons/bs";
 
 const Nav = () => {
+  const [modalOpen, setModalOpen] = useState(false);
+  const saveModalOpen = () => {
+    setModalOpen(prev => !prev);
+  };
+  const navigate = useNavigate();
+  const onClick = () => {
+    navigate(`/`);
+  };
+  const goToSignUp = () => {
+    navigate(`/signup`);
+  };
+  const tokenDiscard = () => {
+    localStorage.removeItem("token");
+    window.location.reload();
+  };
+  // const token = localStorage.getItem("token");
+
   return (
-    <>
+    <S.NavContainer>
       <S.NavTopbar>
         {NavInnerText.map(data => (
           <S.NavTopbarInner key={data.id}>
-            <S.NavTopbarInnerText>{data.text}</S.NavTopbarInnerText>
+            <S.NavTopbarInnerText to={data.url}>
+              {data.text}
+            </S.NavTopbarInnerText>
           </S.NavTopbarInner>
         ))}
+        {localStorage.token ? (
+          <S.NavTopbarInnerLogOut onClick={tokenDiscard}>
+            로그아웃
+          </S.NavTopbarInnerLogOut>
+        ) : (
+          <S.NavTopbarInnerLogIn onClick={goToSignUp}>
+            로그인
+          </S.NavTopbarInnerLogIn>
+        )}
       </S.NavTopbar>
       <S.NavMain>
-        <S.NavMainLogo>KRWEAM</S.NavMainLogo>
+        <S.NavMainLogo onClick={onClick}>KRWEAM</S.NavMainLogo>
 
         <S.NavMainTextContainer>
           {NavMainText.map(data => (
-            <S.NavMainText key={data.id}>{data.text}</S.NavMainText>
+            <div key={data.id}>
+              <S.NavMainText to={data.url}>{data.text}</S.NavMainText>
+            </div>
           ))}
           <S.NavMainText>
-            <BsSearch className="search" />
+            {modalOpen === false ? (
+              <BsSearch className="search" onClick={saveModalOpen} />
+            ) : (
+              <BsXLg className="search" onClick={saveModalOpen} />
+            )}
+            {modalOpen && <NavSearchBar setModalOpen={setModalOpen} />}
           </S.NavMainText>
         </S.NavMainTextContainer>
       </S.NavMain>
-    </>
+    </S.NavContainer>
   );
 };
 
@@ -38,14 +76,12 @@ const NavInnerText = [
   {
     id: "2",
     text: "관심상품",
+    url: "/mypage/wish",
   },
   {
     id: "3",
     text: "마이페이지",
-  },
-  {
-    id: "4",
-    text: "로그인",
+    url: "/mypage/:log",
   },
 ];
 
@@ -53,10 +89,12 @@ const NavMainText = [
   {
     id: "1",
     text: "STYLE",
+    url: "/style",
   },
   {
     id: "2",
     text: "SHOP",
+    url: "/product",
   },
   {
     id: "3",
