@@ -1,6 +1,5 @@
 import React, { useEffect } from "react";
 import { useSearchParams, useNavigate } from "react-router-dom";
-import { APIKEY, REDIRECT_URI } from "../../config";
 
 const KaKaoLogin = () => {
   const [searchParams, setSearchParams] = useSearchParams();
@@ -8,24 +7,23 @@ const KaKaoLogin = () => {
   const navigate = useNavigate();
 
   const getKakaoToken = () => {
-    fetch(`https://kauth.kakao.com/oauth/token`, {
-      method: "POST",
+    fetch(`http://10.58.52.112:3000/users/auth/kakao/callback?code=${code}`, {
+      method: "GET",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      body: `grant_type=authorization_code&client_id=${APIKEY}&redirect_uri=${REDIRECT_URI}&code=${code}`,
     })
       .then(res => res.json())
       .then(data => {
-        if (data.access_token) {
-          localStorage.setItem("token", data.access_token);
-        } else {
+        if (data.accessToken) {
+          localStorage.setItem("token", data.accessToken);
           navigate("/");
+        } else {
+          alert("로그인 정보를 다시 확인하세요");
+          navigate("/login");
         }
-      })
-      .then(navigate("/"));
+      });
   };
 
   useEffect(() => {
-    if (!code) return;
     getKakaoToken();
   }, []);
 

@@ -1,5 +1,5 @@
 import React from "react";
-import S from "./Style";
+import * as S from "./Style";
 import { APIKEY, REDIRECT_URI } from "../../config";
 import { ImBubble } from "react-icons/im";
 
