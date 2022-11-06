@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import useItemInfo from "../useItemInfo";
 import useDealType from "../useDealType";
-import { api } from "../../..//config";
+import { api } from "../../../config";
 import { DealContext } from "../../../context/DealContext";
 import SizeSelect from "./DealStepsComps/SizeSelect";
 import Payment from "../components/DealStepsComps/Payment";

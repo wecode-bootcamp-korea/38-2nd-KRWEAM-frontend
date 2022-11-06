@@ -4,7 +4,9 @@ import * as S from "../styled.ProductList";
 const AdsContainer = () => {
   return (
     <S.AdsContainer>
-      <>이미지 캐러셀이 들어갈 자리입니다</>
+      <S.Img />
+      <S.AdsText>Believe in Infinite Possibility</S.AdsText>
+      <S.AdsText2>KRWEAM</S.AdsText2>
     </S.AdsContainer>
   );
 };
