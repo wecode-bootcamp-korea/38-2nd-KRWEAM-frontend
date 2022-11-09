@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 export const NavSearchBar = styled.div`
+  ${({ theme }) => theme.variables.flex("column", "", "center")}
   z-index: 999;
   position: fixed;
   top: 0;
@@ -9,6 +10,7 @@ export const NavSearchBar = styled.div`
   right: 0;
   bottom: 0;
   background-color: white;
+  margin: 0 auto;
   overflow: unset;
   .closedModal {
     position: absolute;
@@ -17,11 +19,11 @@ export const NavSearchBar = styled.div`
   }
 `;
 export const SearchBarWrap = styled.div`
-  padding: 60px 20% 0;
+  padding: 60px 0;
 `;
 export const InputBox = styled.div`
   display: flex;
-  width: 100%;
+  width: 800px;
   border-bottom: 3px solid black;
   .navInput {
     width: 100%;
@@ -37,7 +39,9 @@ export const InputBox = styled.div`
   }
 `;
 export const SearchBarContentWrap = styled.div`
-  padding: 10px 20%;
+  height: 550px;
+  padding: 10px;
+  overflow: scroll;
 `;
 export const SuggestedSearchTermsBox = styled.div`
   margin: 10px 0;
@@ -77,6 +81,7 @@ export const PopularSearchTime = styled.div`
   font-size: 13px;
 `;
 export const PopularSearchTermsMapContainer = styled.div`
+  width: 800px;
   display: flex;
 `;
 export const PopularSearchTermsMapBox = styled.div`

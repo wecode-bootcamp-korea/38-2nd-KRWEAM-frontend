@@ -11,17 +11,16 @@ const Nav = () => {
     setModalOpen(prev => !prev);
   };
   const navigate = useNavigate();
-  const onClick = () => {
+  const gotomain = () => {
     navigate(`/`);
   };
-  const goToSignUp = () => {
-    navigate(`/signup`);
+  const goLogin = () => {
+    navigate(`/login`);
   };
   const tokenDiscard = () => {
     localStorage.removeItem("token");
     window.location.reload();
   };
-  // const token = localStorage.getItem("token");
 
   return (
     <S.NavContainer>
@@ -38,13 +37,13 @@ const Nav = () => {
             로그아웃
           </S.NavTopbarInnerLogOut>
         ) : (
-          <S.NavTopbarInnerLogIn onClick={goToSignUp}>
+          <S.NavTopbarInnerLogIn onClick={goLogin}>
             로그인
           </S.NavTopbarInnerLogIn>
         )}
       </S.NavTopbar>
       <S.NavMain>
-        <S.NavMainLogo onClick={onClick}>KRWEAM</S.NavMainLogo>
+        <S.NavMainLogo onClick={gotomain}>KRWEAM</S.NavMainLogo>
 
         <S.NavMainTextContainer>
           {NavMainText.map(data => (
@@ -81,7 +80,7 @@ const NavInnerText = [
   {
     id: "3",
     text: "마이페이지",
-    url: "/mypage/:log",
+    url: "/mypage/main",
   },
 ];
 
