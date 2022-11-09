@@ -2,8 +2,9 @@ import styled from "styled-components";
 
 export const Background = styled.div`
   ${({ theme }) => theme.variables.flex("column", null, "center")};
-  position: relative;
+  /* position: relative; */
   width: 100%;
+  padding-top: 130px;
   background-color: #fafafa;
 `;
 
@@ -198,7 +199,7 @@ export const Modal = styled.div`
   ${({ theme }) => theme.variables.flex("column", "space-between", "center")};
   position: absolute;
   box-shadow: rgba(149, 157, 165, 0.1) 0px 8px 24px;
-  top: 500px;
+  top: 550px;
   bottom: 50%;
   left: 50%;
   margin-left: -200px;
@@ -220,4 +221,5 @@ export const ModalClose = styled.button`
   background-color: transparent;
   border: none;
   border-top: 1px solid ${({ theme }) => theme.style.warmGrey_2};
+  cursor: pointer;
 `;
