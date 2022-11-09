@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import { useSearchParams, useNavigate } from "react-router-dom";
+import { api } from "../../config";
 
 const KaKaoLogin = () => {
   const [searchParams, setSearchParams] = useSearchParams();
@@ -7,7 +8,7 @@ const KaKaoLogin = () => {
   const navigate = useNavigate();
 
   const getKakaoToken = () => {
-    fetch(`http://10.58.52.112:3000/users/auth/kakao/callback?code=${code}`, {
+    fetch(`${api.login}/users/auth/kakao/callback?code=${code}`, {
       method: "GET",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
     })

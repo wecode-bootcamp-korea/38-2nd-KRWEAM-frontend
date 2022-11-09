@@ -5,7 +5,7 @@ import { api } from "../../../config";
 import { GrBookmark } from "react-icons/gr";
 import { BsFillBookmarkFill } from "react-icons/bs";
 
-const MainWishModal = ({ setIsClickWish, data }) => {
+const MainWishModal = ({ setIsClickWish, data, setIsClickConfirm }) => {
   const [selectedSize, setSelectedSize] = useState("");
 
   const handleModalClose = e => {
@@ -20,31 +20,26 @@ const MainWishModal = ({ setIsClickWish, data }) => {
     setSelectedSize(e.currentTarget.value);
   };
 
-  const MESSAGE = {
-    KEY_ERROR: "사이즈를 다시 선택하세요",
+  const STATUS = {
+    201: "위시리스트에 상품이 담겼습니다.",
+    500: "네트워크와의 연결이 원활하지 않습니다.",
   };
 
   const clickConfirm = () => {
-    fetch(`${api.wish}/${data.productId}/1/${selectedSize}`, {
+    fetch(`${api.wish}`, {
       method: "POST",
       headers: {
         "content-type": "application/json",
         Authorization: localStorage.getItem("token"),
       },
-    })
-      .then(res => {
-        if (!res.ok) {
-          throw new Error("네트워크 응답이 올바르지 않습니다.");
-        } else {
-          return res.json();
-        }
-      })
-      .then(data => {
-        if (data.message === "KEY_ERROR") {
-          alert(MESSAGE[data.message]);
-        }
-      });
+      body: JSON.stringify({
+        productId: data.productId,
+        sizeId: selectedSize,
+      }),
+    }).then(res => alert(STATUS[res.status]));
+    data.LikedStatus = true;
     setIsClickWish(false);
+    setIsClickConfirm(true);
     document.body.style.overflow = "unset";
   };
 
@@ -56,7 +51,7 @@ const MainWishModal = ({ setIsClickWish, data }) => {
           <S.AddWishProductImg src={data.productImage} />
           <S.AddWishProductNameContainer>
             <S.ProductEngName>{data.productEngName}</S.ProductEngName>
-            <S.ProductKorName>{data.productKorName}</S.ProductKorName>
+            <S.ProductKorName>{data.productKrName}</S.ProductKorName>
           </S.AddWishProductNameContainer>
         </S.AddWishProductInfo>
         <S.SizeSelectBox>
@@ -69,8 +64,8 @@ const MainWishModal = ({ setIsClickWish, data }) => {
                 clickSelectBtn(e);
               }}
             >
-              <p value={size}>{size}</p>
-              {selectedSize === `${size}` ? (
+              <p>{size.size}</p>
+              {selectedSize === `${size.id}` ? (
                 <BsFillBookmarkFill />
               ) : (
                 <GrBookmark />

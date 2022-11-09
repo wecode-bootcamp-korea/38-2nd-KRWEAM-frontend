@@ -11,14 +11,14 @@ const CATEGORY = [
     backgroundImg:
       "https://github.com/HolyWatter/KREAMBANNER/blob/main/banner2.jpg?raw=true",
     categoryname: "남성추천",
-    url: "/",
+    url: "/products/sort?gender=1",
   },
   {
     id: 2,
     backgroundImg:
       "https://github.com/HolyWatter/KREAMBANNER/blob/main/banner3.jpg?raw=true",
     categoryname: "여성추천",
-    url: "/",
+    url: "/products/sort?gender=2",
   },
   {
     id: 3,

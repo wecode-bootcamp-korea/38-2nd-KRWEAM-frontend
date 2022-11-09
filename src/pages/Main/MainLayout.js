@@ -11,12 +11,24 @@ const MainLayout = () => {
   const [pagenationBtn, setPagenationBtn] = useState(1);
 
   useEffect(() => {
-    fetch(`${api.products}?offset=0&limit=${pagenationBtn * 4}`, {
-      method: "GET",
-      headers: { "content-type": "application/json" },
-    })
-      .then(res => res.json())
-      .then(data => setJustDropItem(data.data));
+    if (localStorage.getItem("token")) {
+      fetch(`${api.products}?offset=0&limit=${pagenationBtn * 4}`, {
+        method: "GET",
+        headers: {
+          "content-type": "application/json",
+          Authorization: localStorage.getItem("token"),
+        },
+      })
+        .then(res => res.json())
+        .then(data => setJustDropItem(data.data));
+    } else {
+      fetch(`${api.products}?offset=0&limit=${pagenationBtn * 4}`, {
+        method: "GET",
+        headers: { "content-type": "application/json" },
+      })
+        .then(res => res.json())
+        .then(data => setJustDropItem(data.data));
+    }
   }, [pagenationBtn]);
   const clickPagenation = () => {
     setPagenationBtn(prev => prev + 1);
