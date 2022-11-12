@@ -66,7 +66,7 @@
 
 프론트엔드 - 시연영상
 
-[CLick ME](https://youtu.be/CJnrYoGzpOg)
+[Click Me](https://youtu.be/CJnrYoGzpOg)
 
 # 5. 깃허브 레포지토리
 
