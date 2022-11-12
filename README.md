@@ -1,3 +1,6 @@
+<img width="1440" alt="스크린샷 2022-11-12 오후 12 15 30" src="https://user-images.githubusercontent.com/98324846/201453963-7260fb55-32e5-4e38-a8d9-643f892a3820.png">
+
+
 # 1. 페이지 선택이유
 
 - 국내 최대규모의 한정 아이템 중개 거래소
@@ -58,7 +61,12 @@
 
 백엔드 - ERD
 
+![스크린샷 2022-11-10 오후 5 00 07](https://user-images.githubusercontent.com/98324846/201454022-377864a1-0be7-41f7-8fac-f9832ba0c34f.png)
+
+
 프론트엔드 - 시연영상
+
+[CLick ME](https://youtu.be/CJnrYoGzpOg)
 
 # 5. 깃허브 레포지토리
 
@@ -66,10 +74,9 @@
 
 [프론트](https://github.com/wecode-bootcamp-korea/38-2nd-KRWEAM-frontend)
 
-****Reference : adidas****
+****Reference : kream****
 
 - 이 프로젝트는 아디다스를 참조하여 교육목적상으로 제작하였습니다.
 - 실무수준의 프로젝트이지만 학습용으로 만들었기 때문에 이 코드를 활용하여 이득을 취하거나 무단배포를 할 경우 법적으로 문제될 수 있습니다.
-- 이 프로젝트에서 사용하고 있는 사진 대부분은 위코드에서 구매한 것이므로 해당프로젝트 외부인이 사용할 수 없습니다.
 
 
